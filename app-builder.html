@@ -1,92 +1,261 @@
-←
-TypeCraft
-Building...
-Save Deploy
-🤖 Code Assistant
-Chat with AI to edit your app
-Hi! I'm your code assistant. I can help you modify your app. What would you like to change?
-+ ↑
-index.tsx
-⚡ 📋
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Builder - Build apps with Gemini</title>
+    <link rel="stylesheet" href="app-builder.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Canva+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-builder">
+        <!-- Header -->
+        <header class="builder-header">
+            <div class="header-left">
+                <button class="back-btn" onclick="window.history.back()">←</button>
+                <div class="app-info">
+                    <h1 id="appTitle">TypeCraft</h1>
+                    <span class="app-status">Building...</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="btn-secondary">Save</button>
+                <button class="btn-primary">Deploy</button>
+            </div>
+        </header>
 
-const DEFAULT_DIALOG_MODEL = 'gemini-2.5-flash-preview-native-audio-dialog';
-const DEFAULT_IMAGE_MODEL = 'imagen-3.0-generate-002';
-const DEFAULT_INTERRUPT_SENSITIVITY = StartSensitivity.START_SENSITIVITY_HIGH;
+        <!-- Main Content Area -->
+        <div class="builder-content">
+            <!-- Left Panel - Chat Interface -->
+            <div class="left-panel">
+                <div class="chat-header">
+                    <h3>🤖 Code Assistant</h3>
+                    <p>Chat with AI to edit your app</p>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message assistant">
+                        <div class="message-content">
+                            <p>Hi! I'm your code assistant. I can help you modify your app. What would you like to change?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <input type="text" id="chatInput" placeholder="Make changes, add new features, ask for anything" />
+                        <div class="chat-input-actions">
+                            <button class="chat-action-btn" id="addBtn" title="Add">+</button>
+                            <button class="chat-action-btn" id="sendMessage" title="Send">↑</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-const AVAILABLE_DIALOG_MODELS = [
-  { id: 'gemini-2.5-flash-preview-native-audio-dialog', label: '2.5 preview native' }
+            <!-- Center Panel - Code Editor -->
+            <div class="center-panel">
+                <div class="code-header">
+                    <div class="file-tabs">
+                        <div class="tab active">index.tsx</div>
+                    </div>
+                    <div class="code-actions">
+                        <button class="icon-btn" title="Format">⚡</button>
+                        <button class="icon-btn" title="Copy">📋</button>
+                    </div>
+                </div>
+                <div class="code-editor">
+                    <div class="line-numbers">
+                        <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
+                        <div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
+                    </div>
+                    <div class="code-content">
+<pre><code><span class="comment">/**</span>
+<span class="comment"> * @license</span>
+<span class="comment"> * SPDX-License-Identifier: Apache-2.0</span>
+<span class="comment"> */</span>
+
+<span class="keyword">const</span> <span class="variable">DEFAULT_DIALOG_MODEL</span> = <span class="string">'gemini-2.5-flash-preview-native-audio-dialog'</span>;
+<span class="keyword">const</span> <span class="variable">DEFAULT_IMAGE_MODEL</span> = <span class="string">'imagen-3.0-generate-002'</span>;
+<span class="keyword">const</span> <span class="variable">DEFAULT_INTERRUPT_SENSITIVITY</span> = <span class="variable">StartSensitivity</span>.<span class="property">START_SENSITIVITY_HIGH</span>;
+
+<span class="keyword">const</span> <span class="variable">AVAILABLE_DIALOG_MODELS</span> = [
+  { <span class="property">id</span>: <span class="string">'gemini-2.5-flash-preview-native-audio-dialog'</span>, <span class="property">label</span>: <span class="string">'2.5 preview native'</span> }
 ];
 
-const AVAILABLE_IMAGE_MODELS = [
-  { id: 'imagen-3.0-generate-002', label: 'imagen 3' }
+<span class="keyword">const</span> <span class="variable">AVAILABLE_IMAGE_MODELS</span> = [
+  { <span class="property">id</span>: <span class="string">'imagen-3.0-generate-002'</span>, <span class="property">label</span>: <span class="string">'imagen 3'</span> }
 ];
 
-const SCREEN_PADDING = 30; // Padding in pixels around the imagine component
-const CLICK_SOUND_URL = 'click-sound.mp3';
-const GENERATING_VIDEO_URL = 'generating.mp4';
-const CLAYMOJIS_URL = 'claymojis.png';
-Preview
-Desktop Mobile
-Test app
-⋯
-Text
-TYPECRAFT 123
-Font
-Chido 123 ›
-Style
-Ag
-None
-Ag
-Unfilled
-Ag
-Outline
-Colors
+<span class="keyword">const</span> <span class="variable">SCREEN_PADDING</span> = <span class="number">30</span>; <span class="comment">// Padding in pixels around the imagine component</span>
+<span class="keyword">const</span> <span class="variable">CLICK_SOUND_URL</span> = <span class="string">'click-sound.mp3'</span>;
+<span class="keyword">const</span> <span class="variable">GENERATING_VIDEO_URL</span> = <span class="string">'generating.mp4'</span>;
+<span class="keyword">const</span> <span class="variable">CLAYMOJIS_URL</span> = <span class="string">'claymojis.png'</span>;</code></pre>
+                    </div>
+                </div>
+            </div>
 
-Mirror points
+            <!-- Right Panel - Canva App Preview -->
+            <div class="right-panel">
+                <div class="preview-header">
+                    <h3>Preview</h3>
+                    <div class="preview-controls">
+                        <button class="preview-btn active">Desktop</button>
+                        <button class="preview-btn">Mobile</button>
+                    </div>
+                </div>
+                <div class="app-preview">
+                    <div class="canva-app-interface">
+                        <!-- Canva App Header -->
+                        <div class="app-header">
+                            <h2>Test app</h2>
+                            <div class="header-menu">⋯</div>
+                        </div>
 
+                        <!-- Text Input Section -->
+                        <div class="app-section">
+                            <h3>Text</h3>
+                            <input type="text" class="text-input" value="TYPECRAFT 123" placeholder="Enter your text">
+                        </div>
 
+                        <!-- Font Selection -->
+                        <div class="app-section">
+                            <h3>Font</h3>
+                            <div class="font-selector">
+                                <span>Chido 123</span>
+                                <span class="dropdown-arrow">›</span>
+                            </div>
+                        </div>
 
+                        <!-- Style Selection -->
+                        <div class="app-section">
+                            <h3>Style</h3>
+                            <div class="style-grid">
+                                <div class="style-option active">
+                                    <div class="style-preview">Ag</div>
+                                    <div class="style-label">None</div>
+                                </div>
+                                <div class="style-option">
+                                    <div class="style-preview outline">Ag</div>
+                                    <div class="style-label">Unfilled</div>
+                                </div>
+                                <div class="style-option">
+                                    <div class="style-preview outline-thin">Ag</div>
+                                    <div class="style-label">Outline</div>
+                                </div>
+                            </div>
+                        </div>
 
-No mirror
+                        <!-- Colors Section -->
+                        <div class="app-section">
+                            <h3>Colors</h3>
+                            <div class="color-picker">
+                                <div class="color-circle active"></div>
+                            </div>
+                        </div>
 
+                        <!-- Mirror Points Section -->
+                        <div class="app-section">
+                            <h3>Mirror points</h3>
+                            <div class="mirror-grid">
+                                <div class="mirror-option active">
+                                    <div class="mirror-preview">
+                                        <div class="mirror-pattern">
+                                            <div class="corner"></div>
+                                            <div class="corner"></div>
+                                            <div class="corner"></div>
+                                            <div class="corner"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mirror-label">No mirror</div>
+                                </div>
+                                <div class="mirror-option">
+                                    <div class="mirror-preview">
+                                        <div class="mirror-pattern horizontal">
+                                            <div class="corner"></div>
+                                            <div class="corner"></div>
+                                            <div class="corner"></div>
+                                            <div class="corner"></div>
+                                            <div class="mirror-line vertical"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mirror-label">Horizontal</div>
+                                </div>
+                                <div class="mirror-option">
+                                    <div class="mirror-preview">
+                                        <div class="mirror-pattern vertical">
+                                            <div class="corner"></div>
+                                            <div class="corner"></div>
+                                            <div class="corner"></div>
+                                            <div class="corner"></div>
+                                            <div class="mirror-line horizontal"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mirror-label">Vertical</div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Edit Shape Section -->
+                        <div class="app-section">
+                            <h3>Edit shape</h3>
+                            <div class="edit-shape-area">
+                                <div class="shape-controls">
+                                    <div class="control-point"></div>
+                                    <div class="control-point"></div>
+                                    <div class="control-point"></div>
+                                    <div class="control-point"></div>
+                                    <div class="control-point"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        // Chat functionality
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendButton = document.getElementById('sendMessage');
 
+        function addMessage(content, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'assistant'}`;
+            messageDiv.innerHTML = `
+                <div class="message-content">
+                    <p>${content}</p>
+                </div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
 
-Horizontal
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                chatInput.value = '';
+                // Simulate AI response with more variety
+                setTimeout(() => {
+                    const responses = [
+                        "I'll help you implement that feature. Let me update the code for you.",
+                        "Here's how you can add that functionality.",
+                        "Great idea! Making the changes now.",
+                        "Let me show you how to do that in the code.",
+                        "Done! Anything else you'd like to add?"
+                    ];
+                    const response = responses[Math.floor(Math.random() * responses.length)];
+                    addMessage(response);
+                }, 900 + Math.random() * 1200);
+            }
+        }
 
-
-
-
-
-Vertical
-Edit shape
-
-
-
-
-
+        sendButton.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html> 

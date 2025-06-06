@@ -1,72 +1,347 @@
-e
-c
-o
-s
-y
-s
-t
-e
-m
-API Docs Apps Marketplace Analytics
-Build apps for Canva
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build apps with Gemini</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="80" height="90" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg" style="background:#232529; border-radius:8px;">
+                        <rect x="8" y="8" width="64" height="74" rx="0" stroke="white" stroke-width="3"/>
+                        <circle cx="8" cy="8" r="6" fill="white"/>
+                        <circle cx="72" cy="8" r="6" fill="white"/>
+                        <circle cx="8" cy="82" r="6" fill="white"/>
+                        <circle cx="72" cy="82" r="6" fill="white"/>
+                        <g font-family="monospace, 'Courier New', Courier" font-weight="bold" font-size="20" fill="white" text-anchor="middle">
+                            <text x="24" y="32">e</text>
+                            <text x="40" y="32">c</text>
+                            <text x="56" y="32">o</text>
+                            <text x="24" y="50">s</text>
+                            <text x="40" y="50">y</text>
+                            <text x="56" y="50">s</text>
+                            <text x="24" y="68">t</text>
+                            <text x="40" y="68">e</text>
+                            <text x="56" y="68">m</text>
+                        </g>
+                    </svg>
+                </div>
+                <div class="header-right">
+                    <button class="api-key-btn">API Docs</button>
+                    <span class="nav-item">Apps Marketplace</span>
+                    <span class="nav-item">Analytics</span>
+                    
+                </div>
+            </div>
+        </header>
 
-+ Start from a template 🌎 Digital asset management app ⚡ Design reviewer app 🎨 Design Spellchecker app
-Showcase Your apps Recent apps FAQ
-📱
-DeviceWrap
-Transform your designs into realistic device mockups with premium smartphone, laptop, and tablet frames.
-Mockups Device Frames Premium
-🔗
-ScanLink Pro
-Generate beautiful, branded QR codes for websites, menus, contact cards, and social media profiles.
-QR Codes Custom Design Marketing
-🎨
-LogoVault
-Instantly access brand assets, logos, and color palettes from thousands of companies worldwide.
-Brand Assets Logos Color Palettes
-✨
-FontFusion
-Create eye-catching text effects with advanced typography tools, gradients, shadows, and 3D styling.
-Typography Text Effects 3D Design
-📸
-PixelStream
-Browse millions of high-resolution stock photos, illustrations, and vectors from premium collections.
-Stock Photos Illustrations HD Quality
-🎬
-MotionClips
-Add animated stickers, GIFs, and micro-interactions to bring your static designs to life.
-Animation GIFs Micro-interactions
-🔍
-SocialOptimizer
-Analyze your designs for social media performance and get AI-powered recommendations for better engagement.
-Social Media AI Analysis Optimization
-🎭
-VectorMotion
-Access a curated library of scalable vector animations and customizable motion graphics for professional designs.
-Vector Animation Motion Graphics Scalable
-Choose an app template
-×
-📝
-Empty
-An empty app
-🎨
-AI Image Generator
-Create AI-generated images using advanced models
-✂️
-Image Editor
-Edit and enhance images with powerful tools
-🏠
-Real Estate Listings
-Manage and showcase property listings
-📁
-DAM App
-Digital Asset Management system for organizing files
-🔍
-Searchable List
-Create searchable and filterable lists
-💬
-Chat App
-Real-time messaging and communication platform
-📚
-Publishing App
-Content creation and publishing platform
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Title Section -->
+            <div class="title-section">
+                <h1 class="main-title">
+                    Build apps for <span class="canva-text">Canva</span>
+                </h1>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-section">
+                <div class="search-bar">
+                    <input type="text" placeholder="Builds apps using the Canva Apps SDK without writing code, try &quot;a QR code maker&quot;" class="search-input">
+                    <button class="search-btn" id="searchButton" disabled>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-btn primary" id="startTemplateBtn">+ Start from a template</button>
+                <button class="action-btn secondary" data-search-text="Design an app that connects my Google Drive to Canva for seamless asset management">🌎 Digital asset management app</button>
+                <button class="action-btn secondary" data-search-text="Create a design review app that helps teams collaborate and provide feedback on creative projects">⚡ Design reviewer app</button>
+                <button class="action-btn secondary" data-search-text="Build a design spellchecker that ensures brand consistency and catches design errors automatically">🎨 Design Spellchecker app</button>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="nav-tabs">
+                <button class="nav-tab active">Showcase</button>
+                <button class="nav-tab">Your apps</button>
+                <button class="nav-tab">Recent apps</button>
+                <button class="nav-tab">FAQ</button>
+            </nav>
+
+            <!-- App Cards Grid -->
+            <div class="app-grid">
+                <div class="app-card">
+                    <div class="app-icon">📱</div>
+                    <h3 class="app-title">DeviceWrap</h3>
+                    <p class="app-description">Transform your designs into realistic device mockups with premium smartphone, laptop, and tablet frames.</p>
+                    <div class="app-tags">
+                        <span class="tag">Mockups</span>
+                        <span class="tag">Device Frames</span>
+                        <span class="tag">Premium</span>
+                    </div>
+                </div>
+
+                <div class="app-card">
+                    <div class="app-icon">🔗</div>
+                    <h3 class="app-title">ScanLink Pro</h3>
+                    <p class="app-description">Generate beautiful, branded QR codes for websites, menus, contact cards, and social media profiles.</p>
+                    <div class="app-tags">
+                        <span class="tag">QR Codes</span>
+                        <span class="tag">Custom Design</span>
+                        <span class="tag">Marketing</span>
+                    </div>
+                </div>
+
+                <div class="app-card">
+                    <div class="app-icon">🎨</div>
+                    <h3 class="app-title">LogoVault</h3>
+                    <p class="app-description">Instantly access brand assets, logos, and color palettes from thousands of companies worldwide.</p>
+                    <div class="app-tags">
+                        <span class="tag">Brand Assets</span>
+                        <span class="tag">Logos</span>
+                        <span class="tag">Color Palettes</span>
+                    </div>
+                </div>
+
+                <div class="app-card">
+                    <div class="app-icon">✨</div>
+                    <h3 class="app-title">FontFusion</h3>
+                    <p class="app-description">Create eye-catching text effects with advanced typography tools, gradients, shadows, and 3D styling.</p>
+                    <div class="app-tags">
+                        <span class="tag">Typography</span>
+                        <span class="tag">Text Effects</span>
+                        <span class="tag">3D Design</span>
+                    </div>
+                </div>
+
+                <div class="app-card">
+                    <div class="app-icon">📸</div>
+                    <h3 class="app-title">PixelStream</h3>
+                    <p class="app-description">Browse millions of high-resolution stock photos, illustrations, and vectors from premium collections.</p>
+                    <div class="app-tags">
+                        <span class="tag">Stock Photos</span>
+                        <span class="tag">Illustrations</span>
+                        <span class="tag">HD Quality</span>
+                    </div>
+                </div>
+
+                <div class="app-card">
+                    <div class="app-icon">🎬</div>
+                    <h3 class="app-title">MotionClips</h3>
+                    <p class="app-description">Add animated stickers, GIFs, and micro-interactions to bring your static designs to life.</p>
+                    <div class="app-tags">
+                        <span class="tag">Animation</span>
+                        <span class="tag">GIFs</span>
+                        <span class="tag">Micro-interactions</span>
+                    </div>
+                </div>
+
+                <div class="app-card">
+                    <div class="app-icon">🔍</div>
+                    <h3 class="app-title">SocialOptimizer</h3>
+                    <p class="app-description">Analyze your designs for social media performance and get AI-powered recommendations for better engagement.</p>
+                    <div class="app-tags">
+                        <span class="tag">Social Media</span>
+                        <span class="tag">AI Analysis</span>
+                        <span class="tag">Optimization</span>
+                    </div>
+                </div>
+
+                <div class="app-card">
+                    <div class="app-icon">🎭</div>
+                    <h3 class="app-title">VectorMotion</h3>
+                    <p class="app-description">Access a curated library of scalable vector animations and customizable motion graphics for professional designs.</p>
+                    <div class="app-tags">
+                        <span class="tag">Vector Animation</span>
+                        <span class="tag">Motion Graphics</span>
+                        <span class="tag">Scalable</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Template Modal -->
+    <div class="modal-overlay" id="templateModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-tabs">
+                    
+                    <button class="modal-tab">Choose an app template</button>
+                </div>
+                <button class="modal-close" id="closeModal">×</button>
+            </div>
+            
+            <div class="modal-content">
+                <div class="template-grid">
+                    <div class="template-card">
+                        <div class="template-icon">📝</div>
+                        <h3 class="template-title">Empty</h3>
+                        <p class="template-description">An empty app</p>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-icon">🎨</div>
+                        <h3 class="template-title">AI Image Generator</h3>
+                        <p class="template-description">Create AI-generated images using advanced models</p>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-icon">✂️</div>
+                        <h3 class="template-title">Image Editor</h3>
+                        <p class="template-description">Edit and enhance images with powerful tools</p>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-icon">🏠</div>
+                        <h3 class="template-title">Real Estate Listings</h3>
+                        <p class="template-description">Manage and showcase property listings</p>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-icon">📁</div>
+                        <h3 class="template-title">DAM App</h3>
+                        <p class="template-description">Digital Asset Management system for organizing files</p>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-icon">🔍</div>
+                        <h3 class="template-title">Searchable List</h3>
+                        <p class="template-description">Create searchable and filterable lists</p>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-icon">💬</div>
+                        <h3 class="template-title">Chat App</h3>
+                        <p class="template-description">Real-time messaging and communication platform</p>
+                    </div>
+
+                    <div class="template-card">
+                        <div class="template-icon">📚</div>
+                        <h3 class="template-title">Publishing App</h3>
+                        <p class="template-description">Content creation and publishing platform</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const templateModal = document.getElementById('templateModal');
+        const startTemplateBtn = document.getElementById('startTemplateBtn');
+        const closeModal = document.getElementById('closeModal');
+        const searchInput = document.querySelector('.search-input');
+        const searchButton = document.getElementById('searchButton');
+
+        // Open modal
+        startTemplateBtn.addEventListener('click', () => {
+            templateModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            templateModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        templateModal.addEventListener('click', (e) => {
+            if (e.target === templateModal) {
+                templateModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Template card click handlers
+        document.querySelectorAll('.template-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('.template-title').textContent;
+                templateModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                // Navigate to app builder
+                window.location.href = `app-builder.html?app=${encodeURIComponent(title)}`;
+            });
+        });
+
+        // Action button click handlers to populate search input
+        document.querySelectorAll('.action-btn.secondary').forEach(button => {
+            button.addEventListener('click', () => {
+                const searchText = button.getAttribute('data-search-text');
+                if (searchText && searchInput) {
+                    searchInput.value = searchText;
+                    searchInput.focus();
+                    
+                    // Update search button state after populating text
+                    updateSearchButton();
+                    
+                    // Add a subtle animation to highlight the change
+                    searchInput.style.borderColor = '#4285f4';
+                    setTimeout(() => {
+                        searchInput.style.borderColor = '';
+                    }, 1000);
+                }
+            });
+        });
+
+        // Showcase app card click handlers
+        document.querySelectorAll('.app-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('.app-title').textContent;
+                // Navigate to app builder
+                window.location.href = `app-builder.html?app=${encodeURIComponent(title)}`;
+            });
+        });
+
+        // Search functionality
+        function updateSearchButton() {
+            const hasText = searchInput.value.trim().length > 0;
+            searchButton.disabled = !hasText;
+            if (hasText) {
+                searchButton.style.opacity = '1';
+                searchButton.style.cursor = 'pointer';
+            } else {
+                searchButton.style.opacity = '0.5';
+                searchButton.style.cursor = 'not-allowed';
+            }
+        }
+
+        // Listen for input changes
+        searchInput.addEventListener('input', updateSearchButton);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !searchButton.disabled) {
+                navigateToBuilder();
+            }
+        });
+
+        // Search button click handler
+        searchButton.addEventListener('click', () => {
+            if (!searchButton.disabled) {
+                navigateToBuilder();
+            }
+        });
+
+        function navigateToBuilder() {
+            const query = searchInput.value.trim();
+            if (query) {
+                // Navigate to app builder with search query
+                window.location.href = `app-builder.html?query=${encodeURIComponent(query)}`;
+            }
+        }
+
+        // Initialize button state
+        updateSearchButton();
+    </script>
+</body>
+</html> 
