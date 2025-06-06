@@ -43,11 +43,21 @@
                 </div>
                 <div class="chat-input-container">
                     <div class="chat-input-wrapper">
-                        <input type="text" id="chatInput" placeholder="Make changes, add new features, ask for anything" />
+                        <div class="input-icon">💬</div>
+                        <input type="text" id="chatInput" placeholder="Ask AI to modify your app..." />
                         <div class="chat-input-actions">
-                            <button class="chat-action-btn" id="addBtn" title="Add">+</button>
-                            <button class="chat-action-btn" id="sendMessage" title="Send">↑</button>
+                            <button class="chat-action-btn" id="attachBtn" title="Attach file">📎</button>
+                            <button class="chat-action-btn send-btn" id="sendMessage" title="Send message">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m22 2-7 20-4-9-9-4 20-7z"/>
+                                </svg>
+                            </button>
                         </div>
+                    </div>
+                    <div class="chat-shortcuts">
+                        <button class="shortcut-btn" onclick="fillChatInput('Add a new component')">+ Add component</button>
+                        <button class="shortcut-btn" onclick="fillChatInput('Fix any bugs in the code')">🐛 Fix bugs</button>
+                        <button class="shortcut-btn" onclick="fillChatInput('Improve the styling')">✨ Improve UI</button>
                     </div>
                 </div>
             </div>
@@ -252,9 +262,25 @@
             }
         }
 
+        // Event listeners
         sendButton.addEventListener('click', sendMessage);
         chatInput.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') sendMessage();
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        // Function to fill chat input with shortcut text
+        function fillChatInput(text) {
+            chatInput.value = text;
+            chatInput.focus();
+        }
+
+        // Attach button functionality
+        document.getElementById('attachBtn').addEventListener('click', function() {
+            // Simulate file attach functionality
+            addMessage("File attachment feature coming soon!", false);
         });
     </script>
 </body>
