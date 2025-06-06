@@ -18,6 +18,8 @@
 body {
     font-family: 'Canva Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: #1a1a1a;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+    background-size: 20px 20px;
     color: #ffffff;
     line-height: 1.5;
     min-height: 100vh;
@@ -35,11 +37,9 @@ body {
 /* Header Styles */
 .header {
     background-color: #262626;
+    background-image: none;
     border-bottom: 1px solid #404040;
     padding: 0.75rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
 .header-content {
